@@ -23,7 +23,7 @@ def file2matrix(path,delimiter):
 def randCenters(dataSet, k):
     n = shape(dataSet)[1]
     clustercents = mat(zeros((k,n)))# 初始化聚类中心矩阵:k*n 
-    for col in xrange(n):
+    for col in range(n):
         mincol = min(dataSet[:,col]); maxcol = max(dataSet[:,col])
         # random.rand(k,1): 产生一个0~1之间的随机数向量：k,1表示产生k行1列的随机数
         clustercents[:,col] = mat(mincol + float(maxcol - mincol) * random.rand(k,1))
@@ -50,7 +50,7 @@ def drawScatter(plt,mydata,size=20,color='blue',mrkr='o'):
 def color_cluster(dataindx,dataSet,plt,k=4):
 	index = 0
 	datalen = len(dataindx)
-	for indx in xrange(datalen):
+	for indx in range(datalen):
 		if int(dataindx[indx]) ==0:
 			plt.scatter(dataSet[index,0],dataSet[index,1],c='blue',marker='o')
 		elif int(dataindx[indx]) ==1:
